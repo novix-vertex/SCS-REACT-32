@@ -1,6 +1,17 @@
+import Product from "./Product"
+
 const Products = () => {
   return (
-    <div>Products</div>
+    <div className="flex p-5 justify-evenly items-start flex-wrap gap-2">
+      <Product />
+      <Product />
+      <Product />
+      <Product />
+      <Product />
+      <Product />
+      <Product />
+      <Product />
+    </div>
   )
 }
 
