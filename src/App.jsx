@@ -1,20 +1,21 @@
 import { Route, Routes } from 'react-router-dom'
-import Navbar from './components/Navbar'
 import Home from './components/Home'
-import About from './components/About'
+import Navbar from './components/Navbar'
 import Products from './components/Products'
-import Contacts from './components/Contacts'
+import ProductDetail from './components/ProductDetail'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const App = () => {
+
   return (
     <>
       <Navbar />
-      
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/contacts" element={<Contacts />}/>
+        <Route path="/products/:id" element={<ProductDetail />} />
       </Routes>
     </>
   )
