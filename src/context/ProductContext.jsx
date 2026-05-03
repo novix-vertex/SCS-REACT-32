@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { getProducts } from "../apis/products";
 
 export const ProductDataContext = createContext();
 
@@ -7,13 +8,12 @@ const ProductContext = (props) => {
 
     const [products, setProducts] = useState([]);
 
-    const getProducts = async () => {
-        const res = await axios.get('https://fakestoreapi.com/products');
-        setProducts(res.data);
+    const setProductsData = async () => {
+        setProducts(await getProducts());
     }
 
     useEffect(() => {
-        getProducts();
+        setProductsData();
     }, []);
 
     return (
